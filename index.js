@@ -8,7 +8,7 @@ function appData(...app) {
   } else if (process.platform === 'darwin') {
     appData = path.join(process.env.HOME, 'Library', 'Application Support', ...app);
   } else {
-    appData = path.join(process.env.HOME, ...prependDot(...app));
+    appData = path.join(process.env.HOME, '.config', ...app);
   }
   return appData;
 }
